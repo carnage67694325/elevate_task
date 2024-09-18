@@ -1,6 +1,7 @@
 import 'package:elevate_task/features/home/presentation/model/products/products.model.dart';
 import 'package:elevate_task/features/home/presentation/view/widgets/review_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
@@ -45,10 +46,6 @@ class ProductCard extends StatelessWidget {
                           r'$' '${product.price}',
                           style: const TextStyle(fontSize: 14),
                         ),
-                        const Icon(
-                          Icons.add,
-                          color: Colors.blue,
-                        )
                       ]),
                   ReviewWidget(
                     product: product,
@@ -70,10 +67,17 @@ class ProductCard extends StatelessWidget {
           right: 25,
           bottom: 210,
           child: Icon(
-            color: Colors.red,
-            Icons.favorite,
+            color: Colors.black,
+            FontAwesomeIcons.heart,
           ),
         ),
+        const Positioned(
+            bottom: 35,
+            right: 25,
+            child: Icon(
+              FontAwesomeIcons.circlePlus,
+              color: Color(0xff004087),
+            ))
       ],
     );
   }

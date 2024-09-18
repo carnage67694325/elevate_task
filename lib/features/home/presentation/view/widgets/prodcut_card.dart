@@ -1,9 +1,10 @@
+import 'package:elevate_task/features/home/presentation/model/products/products.model.dart';
 import 'package:elevate_task/features/home/presentation/view/widgets/review_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
-
+  const ProductCard({super.key, required this.product});
+  final ProductsModel product;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -23,29 +24,35 @@ class ProductCard extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Colors.white,
             elevation: 10,
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'tilte',
-                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                    maxLines: 1,
+                    product.title ?? 'title',
+                    style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                        overflow: TextOverflow.ellipsis),
                   ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          r'$' '250',
-                          style: TextStyle(fontSize: 14),
+                          r'$' '${product.price}',
+                          style: const TextStyle(fontSize: 14),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.add,
                           color: Colors.blue,
                         )
                       ]),
-                  ReviewWidget(),
+                  ReviewWidget(
+                    product: product,
+                  ),
                 ],
               ),
             ),
@@ -55,7 +62,7 @@ class ProductCard extends StatelessWidget {
             right: 50,
             bottom: 150,
             child: Image.network(
-              'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+              '${product.image}',
               height: 100,
               width: 100,
             )),

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:elevate_task/core/errors/failure.dart';
 import 'package:elevate_task/core/utils/api_service.dart';
 import 'package:elevate_task/features/home/data/repos/home_repo.dart';
-import 'package:elevate_task/features/home/presentation/model/prodcut/prodcut..model.dart';
+import 'package:elevate_task/features/home/presentation/model/products/products.model.dart';
 
 class HomeRepoImp implements HomeRepo {
   final ApiService apiService;

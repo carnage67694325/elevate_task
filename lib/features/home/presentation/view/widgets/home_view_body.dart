@@ -11,19 +11,10 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetProductCubit, GetProductState>(
-        builder: (context, state) {
-      if (state is GetProductSuccess) {
-        return const CustomScrollView(
-          slivers: [
-            ProductGrid(),
-          ],
-        );
-      } else if (state is GetProductFailure) {
-        return ErrorText(errMessage: state.errMessage);
-      } else {
-        return const Loading();
-      }
-    });
+    return const CustomScrollView(
+      slivers: [
+        ProductGrid(),
+      ],
+    );
   }
 }

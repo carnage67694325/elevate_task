@@ -13,8 +13,8 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
-    BlocProvider.of<GetProductCubit>(context).getProducts();
     super.initState();
+    BlocProvider.of<GetProductCubit>(context).getProducts();
   }
 
   @override

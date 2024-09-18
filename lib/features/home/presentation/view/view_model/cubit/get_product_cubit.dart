@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:elevate_task/features/home/data/repos/home_repo.dart';
-import 'package:elevate_task/features/home/presentation/model/prodcut/prodcut..model.dart';
+import 'package:elevate_task/features/home/presentation/model/products/products.model.dart';
 import 'package:meta/meta.dart';
 
 part 'get_product_state.dart';

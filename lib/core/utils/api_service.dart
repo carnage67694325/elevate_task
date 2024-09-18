@@ -4,7 +4,7 @@ class ApiService {
   final _baseUrl = 'https://fakestoreapi.com/';
   final Dio _dio;
   ApiService(this._dio);
-  Future<Map<String, dynamic>> get({required String endPoints}) async {
+  Future<List<dynamic>> get({required String endPoints}) async {
     Response response = await _dio.get('$_baseUrl$endPoints');
     return response.data;
   }

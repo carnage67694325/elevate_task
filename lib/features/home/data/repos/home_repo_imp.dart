@@ -12,8 +12,7 @@ class HomeRepoImp implements HomeRepo {
   @override
   Future<Either<Failure, List<ProductsModel>>> getProduct() async {
     try {
-      List<dynamic> data =
-          await apiService.get(endPoints: 'products') as List<dynamic>;
+      var data = await apiService.get(endPoints: 'products');
       List<ProductsModel> productList = [];
       for (int i = 0; i < data.length; i++) {
         productList.add(ProductsModel.fromJson(data[i]));

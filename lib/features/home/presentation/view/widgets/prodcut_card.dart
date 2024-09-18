@@ -1,3 +1,4 @@
+import 'package:elevate_task/features/home/presentation/view/widgets/review_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -33,18 +34,18 @@ class ProductCard extends StatelessWidget {
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        r'$' '250',
-                        style: TextStyle(fontSize: 14),
-                      ),
-                      Icon(
-                        Icons.add,
-                        color: Colors.blue,
-                      )
-                    ],
-                  )
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          r'$' '250',
+                          style: TextStyle(fontSize: 14),
+                        ),
+                        Icon(
+                          Icons.add,
+                          color: Colors.blue,
+                        )
+                      ]),
+                  ReviewWidget(),
                 ],
               ),
             ),

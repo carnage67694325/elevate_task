@@ -59,16 +59,16 @@ class ProductCard extends StatelessWidget {
           ),
         ),
         Positioned(
-            right: 50,
-            bottom: 150,
+            right: 55,
+            bottom: 135,
             child: Image.network(
               '${product.image}',
               height: 100,
               width: 100,
             )),
         const Positioned(
-          right: 30,
-          bottom: 200,
+          right: 25,
+          bottom: 210,
           child: Icon(
             color: Colors.red,
             Icons.favorite,

@@ -5,6 +5,7 @@ import 'package:elevate_task/core/widgets/loading.dart';
 import 'package:elevate_task/features/home/presentation/view/view_model/cubit/get_product_cubit.dart';
 import 'package:elevate_task/features/home/presentation/view/widgets/prodcut_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductGrid extends StatelessWidget {
@@ -33,7 +34,16 @@ class ProductGrid extends StatelessWidget {
           return SliverToBoxAdapter(
               child: ErrorText(errMessage: state.errMessage));
         } else {
-          return const SliverToBoxAdapter(child: Loading());
+          return SliverToBoxAdapter(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .4,
+              ),
+              const Loading(),
+            ],
+          ));
         }
       },
     );
